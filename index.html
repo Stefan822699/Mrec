@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MREC — Log in</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page-shell">
+    <section class="brand-panel" aria-label="MREC branding">
+      <a class="brand" href="index.html" aria-label="MREC home"><span class="brand-m">M</span>REC</a>
+      <p class="brand-tag">U P L O A D&nbsp; • &nbsp;C R E A T E&nbsp; • &nbsp;S H A R E</p>
+      <div class="brand-copy">
+        <p class="eyebrow">YOUR VIDEOS</p>
+        <h2>BELONG HERE</h2>
+        <span class="accent-line"></span>
+        <p class="sub-copy">SIMPLE UPLOAD.<br>BIGGER STORIES.</p>
+      </div>
+    </section>
+
+    <section class="form-panel">
+      <div class="form-card">
+        <div class="mini-logo"><span>M</span>REC</div>
+        <h1 id="form-title">Welcome</h1>
+        <p class="subtitle" id="form-subtitle">Log-in to access your account</p>
+
+        <form id="login-form" novalidate>
+          <div class="field">
+            <label for="login-email">Email Address</label>
+            <input id="login-email" name="email" type="email" placeholder="Enter Email Address" autocomplete="email" required>
+            <small class="error" id="login-email-error"></small>
+          </div>
+          <div class="field">
+            <label for="login-password">Password</label>
+            <input id="login-password" name="password" type="password" placeholder="Enter Password" autocomplete="current-password" required minlength="8">
+            <small class="error" id="login-password-error"></small>
+          </div>
+          <div class="options-row">
+            <label class="remember"><input type="checkbox" name="remember"> <span>Remember me</span></label>
+            <a href="#" id="forgot-link">Forgot password?</a>
+          </div>
+          <button class="primary-button" type="submit">Log-in</button>
+          <p class="form-note" id="form-message" role="status"></p>
+          <p class="switch-copy">Don't have an account? <button class="text-button" type="button" id="show-signup">Sign Up</button></p>
+        </form>
+
+        <form id="signup-form" class="hidden" novalidate>
+          <div class="field">
+            <label for="signup-username">Username</label>
+            <input id="signup-username" name="username" type="text" placeholder="Enter Username" autocomplete="username" required minlength="3" maxlength="24">
+            <small class="hint">3–24 characters; letters, numbers, and underscores.</small>
+            <small class="error" id="signup-username-error"></small>
+          </div>
+          <div class="field">
+            <label for="signup-password">Password</label>
+            <input id="signup-password" name="password" type="password" placeholder="Create Password" autocomplete="new-password" required minlength="8">
+            <small class="hint">At least 8 characters.</small>
+            <small class="error" id="signup-password-error"></small>
+          </div>
+          <div class="field">
+            <label for="signup-email">Email Address</label>
+            <input id="signup-email" name="email" type="email" placeholder="Enter Email Address" autocomplete="email" required>
+            <small class="error" id="signup-email-error"></small>
+          </div>
+          <div class="field">
+            <label for="signup-phone">Phone number</label>
+            <input id="signup-phone" name="phone" type="tel" placeholder="Enter Phone number" autocomplete="tel" required inputmode="tel">
+            <small class="hint">Use 10–15 digits; an optional leading + is allowed.</small>
+            <small class="error" id="signup-phone-error"></small>
+          </div>
+          <label class="terms"><input type="checkbox" id="terms" required> <span>By signing up, I agree to the Terms and Conditions and Privacy Policy.</span></label>
+          <small class="error" id="terms-error"></small>
+          <button class="primary-button" type="submit">Sign-up</button>
+          <p class="form-note" id="signup-message" role="status"></p>
+          <p class="switch-copy">Already have an account? <button class="text-button" type="button" id="show-login">Log in</button></p>
+        </form>
+
+        <form id="forgot-form" class="hidden" novalidate>
+          <div class="field">
+            <label for="forgot-email">Email Address</label>
+            <input id="forgot-email" name="email" type="email" placeholder="Enter your account email" autocomplete="email" required>
+            <small class="error" id="forgot-email-error"></small>
+          </div>
+          <button class="primary-button" type="submit">Send reset link</button>
+          <p class="form-note" id="forgot-message" role="status"></p>
+          <p class="switch-copy">Remembered it? <button class="text-button" type="button" id="back-to-login">Back to log in</button></p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-client.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

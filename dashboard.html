@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MREC — Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="dash" id="dash" style="visibility:hidden;">
+    <header class="dash-top">
+      <a class="brand" href="dashboard.html"><span class="brand-m">M</span>REC</a>
+      <div class="dash-user">
+        <span id="user-name"></span>
+        <button class="primary-button" id="logout-btn" type="button">Log out</button>
+      </div>
+    </header>
+
+    <h1 class="dash-title" id="welcome">Welcome</h1>
+
+    <section class="stats">
+      <div class="stat"><span class="stat-num" id="stat-videos">0</span><span class="stat-label">Videos</span></div>
+      <div class="stat"><span class="stat-num" id="stat-views">0</span><span class="stat-label">Total views</span></div>
+      <div class="stat"><span class="stat-num" id="stat-size">0 MB</span><span class="stat-label">Storage used</span></div>
+    </section>
+
+    <section class="dash-card">
+      <h2>Upload a video</h2>
+      <form id="upload-form" class="upload-form">
+        <label class="drop" id="drop" for="video-file">
+          <span id="drop-text">Click to choose a video (max 50 MB)</span>
+          <input id="video-file" type="file" accept="video/*" hidden>
+        </label>
+        <input id="video-title" type="text" placeholder="Video title" maxlength="80">
+        <button class="primary-button" id="upload-btn" type="submit">Upload</button>
+      </form>
+      <p class="form-note" id="upload-msg" role="status"></p>
+    </section>
+
+    <section>
+      <h2 class="section-title">Your videos</h2>
+      <p class="empty" id="empty" style="display:none;">No videos yet. Upload your first one above.</p>
+      <div class="video-grid" id="video-grid"></div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-client.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>
